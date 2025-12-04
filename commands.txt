@@ -1,0 +1,91 @@
+git init                  # Initialize a new git repository
+git status                # Check status of files
+git add <file>            # Stage a file
+git add .                 # Stage all files
+git commit -m "message"   # Commit changes
+git log                   # Show commit history
+git log --oneline         # Compact commit history
+git diff                  # Show changes not staged
+git diff --staged         # Show staged changes
+
+git branch                # List branches
+git branch <branchname>   # Create a new branch
+git checkout <branchname> # Switch to branch
+git checkout -b <branchname> # Create + switch branch
+git merge <branchname>    # Merge branch into current
+git branch -d <branchname> # Delete a branch
+
+git remote -v             # List remotes
+git remote add origin <URL> # Add a new remote
+git remote set-url origin <URL> # Change remote URL
+git pull origin main      # Pull from remote
+git push -u origin main   # Push branch to remote
+git push -f origin main   # Force push
+
+git reset HEAD <file>     # Unstage a file
+git checkout -- <file>    # Discard changes in a file
+git revert <commit>       # Revert a commit
+git reset --hard <commit> # Reset branch to a commit (destructive)
+
+docker --version           # Check Docker version
+docker info                # Show Docker info
+docker images              # List images
+docker ps                  # List running containers
+docker ps -a               # List all containers
+docker pull <image>        # Download an image
+docker rmi <image>         # Remove an image
+docker rm <container>      # Remove a container
+
+docker build -t myapp .     # Build image from Dockerfile
+docker run -p 8080:8080 myapp  # Run container with port mapping
+docker run -d --name myapp myapp # Run container in detached mode
+docker logs <container_id>  # Show container logs
+docker exec -it <container_id> bash # Open shell inside container
+
+docker port <container>     # Show port mappings
+docker stop <container>     # Stop container
+docker restart <container>  # Restart container
+docker inspect <container>  # Detailed info about container
+
+docker system prune -a      # Remove all unused images, containers, networks
+docker volume ls            # List volumes
+docker volume rm <volume>   # Remove a volume
+
+
+minikube start --driver=docker
+kubectl create deployment mynginx --image=nginx
+kubectl set image deployment/mynginx nginx=nginx:latest
+kubectl expose deployment mynginx --type=NodePort --port=80 --target-port=80
+kubectl scale deployment mynginx --replicas=4
+kubectl get deployments
+kubectl get service mynginx
+kubectl port-forward svc/mynginx 8081:80
+kubectl delete deployment mynginx 
+kubectl delete service mynginx
+minikube stop
+
+docker pull jasonrivers/nagios:latest
+docker run --name nagiosdemo -p 8888:80 jasonrivers/nagios:latest
+docker stop nagiosdemo
+docker rm nagiosdemo
+docker rmi jasonrivers/nagios:latest
+
+
+sudo apt update -y
+sudo apt upgrade -y
+
+sudo apt install apache2 -y
+
+sudo systemctl start apache2
+sudo systemctl enable apache2
+
+sudo systemctl status apache2
+
+/var/www/html/
+
+sudo rm /var/www/html/index.html
+
+scp -i "your-key.pem" index.html ubuntu@ec2-public-ip:/var/www/html/
+
+sudo nano /var/www/html/index.html
+ 
